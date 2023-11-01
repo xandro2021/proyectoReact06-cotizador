@@ -5,6 +5,7 @@ import { MARCAS, PLANES } from '../constants';
 const Resultado = () => {
   const { resultado, datos } = useCotizador();
   const { marca, plan, year } = datos;
+  // Como el calculo del año no requiere de una funcion entonces se usar useRef para evitar el renderin automatico cada vez que cambia el respectivo select
   const yearRef = useRef(year);
 
   // Utilizo useCallback para que no se me renderice la info cada vez que modifico marca por medio del select, si no hasta que cambie resultado con el boton enviar
