@@ -13,7 +13,8 @@ const Resultado = () => {
     MARCAS.filter(m => m.id === Number(marca)),
     [resultado]
   );
-  const [nombrePlan] = useCallback(
+  // Alternativa usando useMemo en vez de useCallback
+  const [nombrePlan] = useMemo(() =>
     PLANES.filter(m => m.id === Number(plan)),
     [resultado]
   );
